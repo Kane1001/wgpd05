@@ -17,6 +17,7 @@ var MenuLayer = cc.Layer.extend({
         var item5 = new cc.MenuItemFont("test5",this.item5,this);
         var item6 = new cc.MenuItemFont("test6",this.item6,this);
         var item7 = new cc.MenuItemFont("test7",this.item7,this);
+        var item8 = new cc.MenuItemFont("test8",this.item8,this);
 
         item1.attr({x:-240,y:-200});
         item2.attr({x:-160,y:-200});
@@ -25,9 +26,10 @@ var MenuLayer = cc.Layer.extend({
         item5.attr({x:80,y:-200});
         item6.attr({x:160,y:-200});
 
-        item7.attr({x:160,y:-240});
+        item7.attr({x:-240,y:-240});
+        item8.attr({x:-160,y:-240});
 
-        var menu =new cc.Menu(item1,item2,item3,item4,item5,item6,item7,);
+        var menu =new cc.Menu(item1,item2,item3,item4,item5,item6,item7,item8,);
         // menu.alignItemsHorizontally();
         this.addChild(menu);
 
@@ -104,7 +106,16 @@ var MenuLayer = cc.Layer.extend({
             sprite.attr({x:100,y:cc.winSize.height/2});
             this.addChild(sprite);
 
-            var anim = cc.Animate(animFrames, 1/15);
+            var anim = cc.Animation(animFrames, 1/15,1);
+            var anims = new cc.Animate(anim);
+            sprite.runAction(cc.repeatForever(anims));
+
+
+    },
+    item8: function () {
+        cc.director.pushScene(new Item8Scene());
+
+
 
     },
 
