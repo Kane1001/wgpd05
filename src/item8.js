@@ -16,7 +16,7 @@ var Item8Layer = cc.Layer.extend({
         return true;
     }
 });
-
+    
 var Item8Scene = cc.Scene.extend({
     onEnter:function () {
         this._super();
