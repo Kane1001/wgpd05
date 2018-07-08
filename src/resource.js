@@ -24,6 +24,8 @@
 
 var res = {
     HelloWorld_png : "res/HelloWorld.png",
+    s1_plist:"res/s1.plist",
+    s1_png:"res/s1.png"
 };
 
 var g_resources = [];
